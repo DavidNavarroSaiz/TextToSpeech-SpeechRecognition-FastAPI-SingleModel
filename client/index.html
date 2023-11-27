@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Audio Recording API Demo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<body>
+    <div class="audio-recording-container">
+        <h1 class="title">Audio Recording API Demo</h1>
+        <div class="selection-container">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" class="language-select">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <!-- Add more language options as needed -->
+            </select>
+            <label for="model-select">Select Model:</label>
+            <select id="model-select" class="model-select">
+                <!-- Model options will be dynamically updated -->
+            </select>
+        </div>
+    
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+        
+                        <div class="form-group">
+                            <label for="textToSpeech">Text to Speech:</label>
+                            <textarea id="textToSpeech" class="form-control wide-textarea" rows="3" placeholder="Enter text"></textarea>
+                            <div class="form-group mt-3">
+                                <label for="modelSelect">Select Text-to-Speech Model:</label>
+                                <select id="modelSelect_tts" class="model-select">
+                                    <!-- <option value="gtts">Gtts</option>
+                                    <option value="pytts">Pytts</option> -->
+                                    <!-- Add more options for other models if needed -->
+                                </select>
+                                <button id="speakButton" class="btn btn-success">Speak</button>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center">
+                <div class="start-recording-container">
+                    <i class="start-recording-button fa fa-microphone" aria-hidden="true"></i>
+                </div>
+                <div class="recording-contorl-buttons-container hide">
+                    <i class="cancel-recording-button fa fa-times-circle-o" aria-hidden="true"></i>
+                    <div class="recording-elapsed-time">
+                        <i class="red-recording-dot fa fa-circle" aria-hidden="true"></i>
+                        <p class="elapsed-time"></p>
+                    </div>
+                    <i class="stop-recording-button fa fa-stop-circle-o" aria-hidden="true"></i>
+                </div>
+            </div>
+                <div class="text-indication-of-audio-playing-container">
+                    <p class="text-indication-of-audio-playing hide">Audio is playing<span>.</span><span>.</span><span>.</span></p>
+                </div>
+                <div class="result-container">
+                    <textarea class="result-textarea" rows="4" cols="50" placeholder="Result"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="overlay hide">
+            <div class="browser-not-supporting-audio-recording-box">
+                <p>To record audio, use browsers like Chrome and Firefox that support audio recording.</p>
+                <button type="button" class="close-browser-not-supported-box">Ok.</button>
+            </div>
+        </div>
+        
+
+    <audio controls class="audio-element hide">
+    </audio>
+
+    <script src="js/tts_sst.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
